@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/goit-react-hw-03-image-finder/static/css/main.a193365e.css",
+    "main.js": "/goit-react-hw-03-image-finder/static/js/main.44b8c6e0.js",
+    "static/media/remixicon.svg?t=1687271883607": "/goit-react-hw-03-image-finder/static/media/remixicon.636515c9a8963df4380d.svg",
+    "static/media/remixicon.eot?t=1687271883607": "/goit-react-hw-03-image-finder/static/media/remixicon.83e9a22ce7f199999169.eot",
+    "static/media/remixicon.ttf?t=1687271883607": "/goit-react-hw-03-image-finder/static/media/remixicon.0bcb16fc20c3d365da14.ttf",
+    "static/media/remixicon.woff?t=1687271883607": "/goit-react-hw-03-image-finder/static/media/remixicon.3f0f84f17d39491e07ff.woff",
+    "static/media/remixicon.woff2?t=1687271883607": "/goit-react-hw-03-image-finder/static/media/remixicon.85992a032c7668836563.woff2",
+    "index.html": "/goit-react-hw-03-image-finder/index.html",
+    "main.a193365e.css.map": "/goit-react-hw-03-image-finder/static/css/main.a193365e.css.map",
+    "main.44b8c6e0.js.map": "/goit-react-hw-03-image-finder/static/js/main.44b8c6e0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a193365e.css",
+    "static/js/main.44b8c6e0.js"
+  ]
+}
