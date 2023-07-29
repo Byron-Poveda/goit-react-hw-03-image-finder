@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import css from './ImageGalleryContent.module.css';
-import ModalGallery from './ModalGallery/ModalGallery';
+import css from './ItemGalleryImage.module.css';
+import ModalGallery from '../ModalGallery/ModalGallery';
 export default class ItemGallery extends Component {
   static propTypes = { img: PropTypes.object };
   constructor(props) {

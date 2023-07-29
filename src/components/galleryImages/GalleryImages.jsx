@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import axios from 'axios';
 import 'remixicon/fonts/remixicon.css';
-import SearchForm from './SearchForm';
+import SearchForm from './Searchbar/SearchForm';
 import Button from 'components/button/Button';
 import ListGallery from './ListGallery/ListGallery';
 import Loader from 'components/Loader/Loader';
-import css from './Searchbar.module.css';
+import css from './GalleryImages.module.css';
 
 export default class GalleryImages extends Component {
   static propTypes = { form: PropTypes.func };
@@ -16,6 +16,7 @@ export default class GalleryImages extends Component {
       search: '',
       images: [],
       loading: false,
+      totalHits: 0,
       params: {
         key: '36227558-9625164a7e143cb1d3fcc8b96',
         lang: 'en,es',
@@ -38,8 +39,11 @@ export default class GalleryImages extends Component {
     const { params } = this.state;
     this.setState({ loading: true, search: value });
     axios.get(`https://pixabay.com/api/?q=${value}`, { params }).then(res => {
-      this.setState({ images: res.data.hits });
-      this.setState({ loading: false });
+      this.setState({
+        images: res.data.hits,
+        loading: false,
+        totalHits: res.data.totalHits,
+      });
     });
   }
   loadMore() {
@@ -58,7 +62,12 @@ export default class GalleryImages extends Component {
   }
 
   render() {
-    const { images, loading } = this.state;
+    const {
+      images,
+      loading,
+      totalHits,
+      params: { per_page },
+    } = this.state;
     return (
       <>
         <header className={css.Searchbar}>
@@ -69,7 +78,7 @@ export default class GalleryImages extends Component {
         </header>
         {loading ? <Loader /> : null}
         <ListGallery images={images} />
-        {images.length > 0 ? (
+        {images.length > 0 && totalHits > per_page ? (
           <div className={css.buttonContainer}>
             <Button
               type="button"

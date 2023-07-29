@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ItemGallery from './ItemGallery';
-import css from './ImageGallery.module.css';
+import ItemGallery from './ItemGallery/ItemGallery';
+import css from './ListImageGallery.module.css';
 export default class ListGallery extends Component {
   static propTypes = {
     images: PropTypes.array,
