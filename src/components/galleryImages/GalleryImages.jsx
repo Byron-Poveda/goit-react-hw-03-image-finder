@@ -6,6 +6,7 @@ import SearchForm from './Searchbar/SearchForm';
 import Button from 'components/button/Button';
 import ListGallery from './ListGallery/ListGallery';
 import Loader from 'components/Loader/Loader';
+import Container from 'components/Conatiner/Conatiner';
 import css from './GalleryImages.module.css';
 
 export default class GalleryImages extends Component {
@@ -69,7 +70,7 @@ export default class GalleryImages extends Component {
       params: { per_page },
     } = this.state;
     return (
-      <>
+      <Container>
         <header className={css.Searchbar}>
           <SearchForm
             searchDataApi={this.searchDataApi}
@@ -89,7 +90,7 @@ export default class GalleryImages extends Component {
             </Button>
           </div>
         ) : null}
-      </>
+      </Container>
     );
   }
 }
