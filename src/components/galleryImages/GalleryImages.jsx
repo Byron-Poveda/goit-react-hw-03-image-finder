@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import 'remixicon/fonts/remixicon.css';
 import SearchForm from './Searchbar/SearchForm';
-import Button from 'components/button/Button';
 import ListGallery from './ListGallery/ListGallery';
 import Loader from 'components/Loader/Loader';
 import Container from 'components/Conatiner/Conatiner';
@@ -71,28 +70,33 @@ export const GalleryImages = () => {
   const imgData = data => {
     setImages(data.data.hits);
   };
-  const searchDataApi = value => {
-    setLoading(true);
-    setSearch(value);
-    axios.get(`https://pixabay.com/api/?q=${value}`, { params }).then(res => {
-      setImages(res.data.hits);
-      setLoading(false);
-      setTotalHits(res.data.totalHits);
-    });
-  };
+  //En este caso, al utilizar searchDataApi dentro de useEffect, también debes usar useCallback() para mantener la estabilidad de referencia y evitar el cambio innecesario del efecto.
+  const searchDataApi = useCallback(
+    value => {
+      setLoading(true);
+      setSearch(value);
+      axios.get(`https://pixabay.com/api/?q=${value}`, { params }).then(res => {
+        setImages(res.data.hits);
+        setLoading(false);
+        setTotalHits(res.data.totalHits);
+      });
+    },
+    [params]
+  );
   const loadMore = () => {
     setParams({ ...params, per_page: params.per_page + 12 });
   };
   useEffect(() => {
     searchDataApi(search);
-  }, [params.per_page]);
+  }, [search, searchDataApi, params]);
+
   return (
     <Container>
       <HeaderSearchBar>
         <SearchForm searchDataApi={searchDataApi} imgData={imgData} />
       </HeaderSearchBar>
-      {loading ? <Loader /> : null}
       <ListGallery images={images} />
+      {loading ? <Loader /> : null}
       {images.length > 0 && totalHits > params.per_page ? (
         <ButtonContainer>
           <Button type="button" onClick={loadMore}>
