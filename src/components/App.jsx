@@ -8,13 +8,13 @@ const AppDiv = styled.div`
   grid-gap: 16px;
   padding-bottom: 24px;
 `;
-function App(props) {
+const App = () => {
   return (
     <AppDiv>
       <GalleryImages />
     </AppDiv>
   );
-}
+};
 
 App.propTypes = {};
 
