@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/goit-react-hw-04-image-finder/static/css/main.e8824fcb.css",
-    "main.js": "/goit-react-hw-04-image-finder/static/js/main.92999aa1.js",
+    "main.js": "/goit-react-hw-04-image-finder/static/js/main.3789694d.js",
     "static/media/remixicon.svg?t=1687271883607": "/goit-react-hw-04-image-finder/static/media/remixicon.636515c9a8963df4380d.svg",
     "static/media/remixicon.eot?t=1687271883607": "/goit-react-hw-04-image-finder/static/media/remixicon.83e9a22ce7f199999169.eot",
     "static/media/remixicon.ttf?t=1687271883607": "/goit-react-hw-04-image-finder/static/media/remixicon.0bcb16fc20c3d365da14.ttf",
@@ -9,10 +9,10 @@
     "static/media/remixicon.woff2?t=1687271883607": "/goit-react-hw-04-image-finder/static/media/remixicon.85992a032c7668836563.woff2",
     "index.html": "/goit-react-hw-04-image-finder/index.html",
     "main.e8824fcb.css.map": "/goit-react-hw-04-image-finder/static/css/main.e8824fcb.css.map",
-    "main.92999aa1.js.map": "/goit-react-hw-04-image-finder/static/js/main.92999aa1.js.map"
+    "main.3789694d.js.map": "/goit-react-hw-04-image-finder/static/js/main.3789694d.js.map"
   },
   "entrypoints": [
     "static/css/main.e8824fcb.css",
-    "static/js/main.92999aa1.js"
+    "static/js/main.3789694d.js"
   ]
 }
